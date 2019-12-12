@@ -10,7 +10,7 @@ router.get('/list', (req, res, next) => {
 
   //确保访问操作页面的时候只显示自己的博客内容
   if (req.query.isadmin) {
-    if (req.session.username === null) {
+    if (req.session.username == null) {
       res.json(new ErrorModel('尚未登录'))
       return
     }
